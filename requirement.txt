@@ -1,0 +1,17 @@
+# LangChain Core
+langchain
+langchain-core
+
+# Anthropic Integration
+langchain-anthropic
+
+# Environment Variable Management
+python-dotenv
+
+# Machine Learning Utilities
+numpy
+scikit-learn
+
+
+streamlit
+fastapi
