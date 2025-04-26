@@ -13,6 +13,8 @@ from prompts.delete_todo import delete_todo_prompt
 from prompts.create_todo import create_todo_prompt
 from prompts.update_todo import update_todo_prompt
 from langchain_anthropic import ChatAnthropic
+from dotenv import load_dotenv
+load_dotenv()
 
 
 model = ChatAnthropic(model='claude-3-5-sonnet-20241022')

@@ -27,7 +27,7 @@ def call_api_post(access_token, payload):
         # Raise exception for bad HTTP status codes
         response.raise_for_status()
 
-        return response.json()
+        return { "result": "Created: Todo...","details":payload }
     except requests.exceptions.RequestException as e:
         print("❌ API request failed:", e)
         return str(e)
@@ -67,7 +67,7 @@ def call_api_put(access_token, payload):
         # Raise exception for bad HTTP status codes
         response.raise_for_status()
 
-        return response.json()
+        return { "result": "Updated: Todo...","details":payload }
     except requests.exceptions.RequestException as e:
         print("❌ API request failed:", e)
         return str(e)
@@ -106,7 +106,7 @@ def call_api_delete(access_token, payload):
         # Raise exception for bad HTTP status codes
         response.raise_for_status()
 
-        return response.json()
+        return { "result": "Deleted: Todo...","details":payload }
     except requests.exceptions.RequestException as e:
         print("❌ API request failed:", e)
         return str(e)
