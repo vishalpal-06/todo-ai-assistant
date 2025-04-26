@@ -12,6 +12,7 @@ from prompts.identify_task import identify_task_prompt
 from prompts.delete_todo import delete_todo_prompt
 from prompts.create_todo import create_todo_prompt
 from prompts.update_todo import update_todo_prompt
+from prompts.general_response import general_response_prompt
 from langchain_anthropic import ChatAnthropic
 from dotenv import load_dotenv
 load_dotenv()
@@ -49,4 +50,10 @@ update_todo_chain = RunnableSequence(
     model,
     JsonOutputParser(),
     lambda x: UpdateTodoDetails(**x)
+)
+
+general_response_chai = RunnableSequence(
+    general_response_prompt,
+    model,
+    JsonOutputParser()
 )

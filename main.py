@@ -5,7 +5,8 @@ from chains.chains import (
     task_classification_chain,
     delete_todo_chain,
     create_todo_chain,
-    update_todo_chain
+    update_todo_chain,
+    general_response_chai
 )
 from api_calls import call_api_post, call_api_put, call_api_delete
 
@@ -50,8 +51,12 @@ def process_user_input( token: str, user_input: str) -> str:
         clear_payload = {k: v for k, v in payload.items() if v is not None}
         response = call_api_put(access_token=token, payload=payload)
         return response
+
     else:
-        return "Unrecognized task type."
+        result = general_response_chai.invoke({"user_input": user_input})
+        return result
+        # return "Unrecognized task type."
+
 
 
 class TextInput(BaseModel):
