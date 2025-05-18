@@ -1,7 +1,5 @@
 import requests
 
-# access_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdHJpbmciLCJpZCI6NSwicm9sZSI6InVzZXIiLCJleHAiOjE3NDU1MzQ2NDN9.54Gmb5K7SgW6Nqs6QBbckVJybg8cuwHdguBEUJK8PDs"
-
 def call_api_post(access_token, payload):
     """
     Makes a POST request to the given URL with Bearer token and JSON payload.
